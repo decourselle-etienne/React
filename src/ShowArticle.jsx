@@ -5,8 +5,6 @@ const ShowArticle = (props) => {
     // il faut la boucle sur tous les articles
     // pour chaque article, on utilise un composant ShowArticle dont l'unique rôle est d'afficher un seul article
 
-
-
     const article = props.currentArticle;
 
     return (
