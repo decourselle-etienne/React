@@ -1,13 +1,15 @@
-import ListArticles from "./ListArticles";
 import Footer from "./Footer";
 import Header from "./Header";
 import './App.css';
+import RandomCocktail from "./RandomCocktail";
+
+
 
 function App() {
   return (
-    <div>
+    <div class="container">
       <Header />
-      <ListArticles />
+      <RandomCocktail />
       <Footer />
     </div>
   );
