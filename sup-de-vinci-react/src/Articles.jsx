@@ -39,7 +39,6 @@ const Articles = () => {
 
     return (
 
-
         <div>
             {articles.map((item) => {
                 if (item.isPublished) {
@@ -49,7 +48,7 @@ const Articles = () => {
                             <h3>{item.subtitle}</h3>
                             <img src={item.image} alt={item.title}></img>
                             <p>{item.content}</p>
-                            <p>{ }</p>
+                            <p>{item.date.getFullYear()}-{item.date.getMonth() + 1}-{item.date.getDate()}</p>
                         </div>
                     )
                 }
