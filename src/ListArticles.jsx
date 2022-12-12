@@ -45,10 +45,10 @@ const ListArticles = () => {
     return (
 
         <div>
-            {articles.map((item) => {
-                if (item.isPublished) {
+            {articles.map((article) => {
+                if (article.isPublished) {
                     return (
-                        <ShowArticle currentArticle={item} />
+                        <ShowArticle currentArticle={article} />
                     )
                 }
             })
