@@ -1,4 +1,6 @@
-const Articles = () => {
+import ShowArticle from "./ShowArticle";
+
+const ListArticles = () => {
 
     const articles = [
 
@@ -10,6 +12,7 @@ const Articles = () => {
             date: new Date("2021-01-01"),
             content: "Contenu de l'article 1",
             isPublished: true,
+            id: 1,
 
         },
 
@@ -21,6 +24,7 @@ const Articles = () => {
             date: new Date("2021-01-01"),
             content: "Contenu de l'article 2",
             isPublished: false,
+            id: 2,
 
         },
 
@@ -32,6 +36,7 @@ const Articles = () => {
             date: new Date("2021-01-01"),
             content: "Contenu de l'article 3",
             isPublished: true,
+            id: 3,
 
         },
 
@@ -43,13 +48,7 @@ const Articles = () => {
             {articles.map((item) => {
                 if (item.isPublished) {
                     return (
-                        <div>
-                            <h2>{item.title}</h2>
-                            <h3>{item.subtitle}</h3>
-                            <img src={item.image} alt={item.title}></img>
-                            <p>{item.content}</p>
-                            <p>{item.date.getFullYear()}-{item.date.getMonth() + 1}-{item.date.getDate()}</p>
-                        </div>
+                        <ShowArticle currentArticle={item} />
                     )
                 }
             })
@@ -58,4 +57,4 @@ const Articles = () => {
     )
 }
 
-export default Articles;
+export default ListArticles;

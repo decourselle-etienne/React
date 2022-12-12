@@ -1,4 +1,4 @@
-import Articles from "./Articles";
+import ListArticles from "./ListArticles";
 import Footer from "./Footer";
 import Header from "./Header";
 
@@ -8,7 +8,7 @@ function App() {
       <Header />
       <Footer />
 
-      <Articles />
+      <ListArticles />
     </div>
   );
 }
