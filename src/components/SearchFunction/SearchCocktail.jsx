@@ -1,7 +1,6 @@
 import SearchForm from "./SearchForm";
-import ShowResults from "../Listing/ShowCocktail";
+import ShowResults from "./ShowResults";
 import { useFetchResearchCocktail } from "../../lib/hooks/useFetchResearchCocktail";
-import { useFetchAllCocktails } from "../../lib/hooks/useFetchAllCocktails";
 
 const SearchCocktail = () => {
 
@@ -12,13 +11,13 @@ const SearchCocktail = () => {
     // Dans votre composant affichez les cocktails trouvés sur l'api
 
 
-    const [cocktailResultData, handleSubmit] = useFetchResearchCocktail;
-    const cocktails = useFetchAllCocktails;
+    const [cocktailResultData, handleSubmit] = useFetchResearchCocktail();
 
 
     return (
         <div>
             <SearchForm handleSubmit={handleSubmit} />
+
             <ShowResults cocktailResultData={cocktailResultData} />
         </div >
 

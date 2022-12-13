@@ -1,6 +1,8 @@
 const ShowCocktail = (props) => {
     const cocktail = props.cocktail;
 
+    console.log(cocktail)
+
 
     const getIngredient = () => {
         const ingredients = []

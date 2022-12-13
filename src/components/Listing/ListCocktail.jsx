@@ -1,11 +1,7 @@
-import { useEffect, useState } from "react";
 import { useFetchAllCocktails } from "../../lib/hooks/useFetchAllCocktails";
-import ShowCocktail from "./SearchFunction/ShowCocktail";
+import ShowCocktail from "./ShowCocktail";
 
 const ListCocktail = () => {
-
-
-    //fetch sur: https://www.thecocktaildb.com/api/json/v1/1/search.php?s=
 
     const cocktailsData = useFetchAllCocktails();
 
@@ -21,5 +17,6 @@ const ListCocktail = () => {
         </div>
     )
 }
+
 
 export default ListCocktail;
