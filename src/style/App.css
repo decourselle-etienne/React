@@ -65,3 +65,20 @@ img {
     border: none;
     border-radius: 10px;
 }
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+input {
+    width: 400px;
+    margin: auto;
+}
+
+button {
+    width: 200px;
+    margin: auto;
+}

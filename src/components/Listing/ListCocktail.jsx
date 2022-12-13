@@ -1,20 +1,13 @@
 import { useEffect, useState } from "react";
-import ShowCocktail from "./ShowCocktail";
+import { useFetchAllCocktails } from "../../lib/hooks/useFetchAllCocktails";
+import ShowCocktail from "./SearchFunction/ShowCocktail";
 
 const ListCocktail = () => {
 
 
     //fetch sur: https://www.thecocktaildb.com/api/json/v1/1/search.php?s=
 
-    const [cocktailsData, setCocktailsData] = useState([]);
-
-    useEffect(() => {
-        (async () => {
-            const cocktailResponse = await fetch('https://www.thecocktaildb.com/api/json/v1/1/search.php?s=');
-            const cocktailsData = await cocktailResponse.json();
-            setCocktailsData(cocktailsData.drinks);
-        })();
-    }, []);
+    const cocktailsData = useFetchAllCocktails();
 
     return (
         <div className="cocktails">

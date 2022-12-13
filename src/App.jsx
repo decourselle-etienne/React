@@ -1,8 +1,8 @@
-import Footer from "./Footer";
-import Header from "./Header";
+import Footer from "./components/Header_Footer/Footer";
+import Header from "./components/Header_Footer/Header";
 import './App.css';
 //import ListCocktail from "./ListCocktail";
-import FindCocktail from "./FindCocktail";
+import SearchCocktail from "./SearchFunction/SearchCocktail";
 
 
 
@@ -14,7 +14,7 @@ function App() {
   return (
     <div className="container">
       <Header />
-      <FindCocktail />
+      <SearchCocktail />
       <Footer />
     </div>
   );

@@ -1,7 +1,7 @@
 // créer un composant qui affiche les recettes de cocktails issues
 // de l'API https://www.thecocktaildb.com/api/json/v1/1/random.php
 
-import { useEffect, useState } from "react";
+import { useFetchRandomCocktail } from "../../lib/hooks/useFetchRandomCocktail";
 import ShowCocktail from "./ShowCocktail";
 
 
@@ -11,17 +11,7 @@ import ShowCocktail from "./ShowCocktail";
 
 const RandomCocktail = () => {
 
-
-    const [cocktailRandomData, setCocktailRandomData] = useState(null);
-
-
-    useEffect(() => {
-        (async () => {
-            const cocktailResponse = await fetch('https://www.thecocktaildb.com/api/json/v1/1/random.php');
-            const cocktailRandomData = await cocktailResponse.json();
-            setCocktailRandomData(cocktailRandomData.drinks[0]);
-        })();
-    }, []);
+    const cocktailRandomData = useFetchRandomCocktail()
 
 
 
