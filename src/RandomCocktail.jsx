@@ -1,7 +1,8 @@
 // créer un composant qui affiche les recettes de cocktails issues
 // de l'API https://www.thecocktaildb.com/api/json/v1/1/random.php
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import ShowCocktail from "./ShowCocktail";
 
 
 // composant doit faire un appel fetch
@@ -10,27 +11,24 @@ import { useState } from "react";
 
 const RandomCocktail = () => {
 
+
     const [cocktailRandomData, setCocktailRandomData] = useState(null);
 
-    const handleClick = async () => {
-        const cocktailResponse = await fetch('https://www.thecocktaildb.com/api/json/v1/1/random.php');
-        const cocktailRandomData = await cocktailResponse.json();
 
-        setCocktailRandomData(cocktailRandomData.drinks[0]);
-    };
+    useEffect(() => {
+        (async () => {
+            const cocktailResponse = await fetch('https://www.thecocktaildb.com/api/json/v1/1/random.php');
+            const cocktailRandomData = await cocktailResponse.json();
+            setCocktailRandomData(cocktailRandomData.drinks[0]);
+        })();
+    }, []);
 
 
 
     return (
-        <div class="content">
-            <button onClick={handleClick}>Afficher une recette random</button>
+        <div className="content">
             {cocktailRandomData ? (
-                <div class="cocktail">
-                    <h1>{cocktailRandomData.strDrink}</h1>
-                    <h3>{cocktailRandomData.strCategory}</h3>
-                    <img src={cocktailRandomData.strDrinkThumb}></img>
-                    <p>{cocktailRandomData.strInstructions}</p>
-                </div>
+                <ShowCocktail cocktail={cocktailRandomData} />
             ) : (
                 <div>
                     <h1>Recette en cours de chargement</h1>

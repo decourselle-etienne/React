@@ -29,7 +29,7 @@ const Header = () => {
         <header>
             {displayTitle && <h1>{title}</h1>}
 
-            <nav>
+            {/* <nav>
                 <ul>
                     {menuItems.map((item) => {
                         return (
@@ -39,7 +39,7 @@ const Header = () => {
                         )
                     })}
                 </ul>
-            </nav>
+            </nav> */}
 
         </header>
     )
