@@ -1,8 +1,8 @@
 import Footer from "./components/Header_Footer/Footer";
 import Header from "./components/Header_Footer/Header";
-import './App.css';
+import './style/App.css';
 //import ListCocktail from "./ListCocktail";
-import SearchCocktail from "./SearchFunction/SearchCocktail";
+import SearchCocktail from "./components/SearchFunction/SearchCocktail";
 
 
 
