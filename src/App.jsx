@@ -1,7 +1,11 @@
-import Footer from "./components/Header_Footer/Footer";
-import Header from "./components/Header_Footer/Header";
-import SearchCocktail from "./components/SearchFunction/SearchCocktail";
 import './style/App.css';
+import Home from "./components/Home";
+import ListCocktail from "./components/Listing/ListCocktail";
+import { HotModuleReplacementPlugin } from "webpack";
+import Footer from "./components/headerFooter/Footer";
+import Header from "./components/headerFooter/Header";
+import SearchCocktail from "./components/SearchFunction/SearchCocktail";
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 
 
@@ -11,11 +15,20 @@ function App() {
   // refacto et appeler le composant ShowCocktail dans ListCocktail
 
   return (
-    <div className="container">
-      <Header />
-      <SearchCocktail />
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="*" element={<Home />} />
+        <Route path="/list" element={<ListCocktail />} />
+
+
+      </Routes>
+    </BrowserRouter>
+
+    // <div className="container">
+    //   <Header />
+    //   <SearchCocktail />
+    //   <Footer />
+    // </div>
   );
 }
 

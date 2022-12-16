@@ -1,6 +1,7 @@
 import { useFetchAllCocktails } from "../../lib/hooks/useFetchAllCocktails";
 import ShowCocktail from "./ShowCocktail";
 
+
 const ListCocktail = () => {
 
     const cocktailsData = useFetchAllCocktails();

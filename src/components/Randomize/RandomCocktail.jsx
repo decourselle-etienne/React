@@ -5,6 +5,7 @@ import { useFetchRandomCocktail } from "../../lib/hooks/useFetchRandomCocktail";
 import ShowCocktail from "./ShowCocktail";
 
 
+
 // composant doit faire un appel fetch
 // stocker le résultat de l'appel dans une variable
 // et on va l'afficher dans notre composant
